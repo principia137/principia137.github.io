@@ -1,0 +1,30 @@
+<!-- each category page -->
+{% if page.type %}
+<div class="archive">
+  <p class="archive_type">{{ page.type }}</p>
+  <ul>
+    {% assign subcategories = site.categories[page.type] | group_by: "subcategory" %}
+    {% for subcategory in subcategories %}
+    <li>
+      <h2>{{ subcategory.name }}</h2>
+      <ul>
+        {% for post in subcategory.items %}
+        {% if post.url %}
+        <li>
+          <time class='archive_date' datetime='{{ post.date | date_to_xmlschema }}'>
+            {{ post.date | date: "%b %-d, %Y" }}
+          </time>
+          <div class='archive_title'>
+            <a href='{{ post.url | relative_url }}'>
+              {{ post.title | escape }}
+            </a>
+          </div>
+        </li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
