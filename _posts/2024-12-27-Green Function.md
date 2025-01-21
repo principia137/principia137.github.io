@@ -1,7 +1,7 @@
 ---
 title: 그린함수(Green function)의 이해와 적용
-categories: [study&dev]
-subcategory : mathematics
+categories: [Study&Dev]
+subcategory : Mathematics
 comments: true
 ---
 
