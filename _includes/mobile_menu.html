@@ -1,19 +1,32 @@
 <nav class="mobile_menu">
+  <!-- 모바일 메뉴를 감싸는 네비게이션 태그 -->
 
   <ul class="nav_list">
+    <!-- 네비게이션 항목을 포함하는 리스트 -->
+    
+    <li class="nav_item">
+      <a href="{{ site.baseurl }}/home.html">Home</a>
+    </li>
+    <!-- 'Home' 페이지로 이동하는 링크 -->
+    
     {% if site.user.aboutme %}
+    <!-- 사이트 설정에 'aboutme' 정보가 있는 경우 -->
     <li class="nav_item">
       <a href="{{ site.baseurl }}/aboutme.html">About</a>
+      <!-- 'About' 페이지로 이동하는 링크 -->
     </li>
-
     {% endif %}
-    {% for category in site.categories %}
-    {% capture cat_name %}{{ category | first }}{% endcapture %}
 
+    {% for category in site.categories %}
+    <!-- 사이트의 각 카테고리에 대해 반복 -->
+
+    {% capture cat_name %}{{ category | first }}{% endcapture %}
+    <!-- 카테고리 이름을 'cat_name' 변수에 저장 -->
+    
     <li class="nav_item">
-      <a href="{{ site.baseurl }}/categories/{{ cat_name }}" id="aa">{{ cat_name }} ({{ category | last | size }})</a>
+      <a href="{{ site.baseurl }}/categories/{{ cat_name | downcase }}" id="aa">{{ cat_name }} ({{ category | last | size }})</a>
+      <!-- 카테고리 페이지로 이동하는 링크, 카테고리 이름과 해당 카테고리의 글 수를 표시 -->
     </li>
     {% endfor %}
   </ul>
-
 </nav>
