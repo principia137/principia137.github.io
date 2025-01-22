@@ -37,7 +37,7 @@ defaults:
       type: posts
     values:
       layout: post
-      comments: true   
+      comment: true   
 
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 markdown: kramdown 
