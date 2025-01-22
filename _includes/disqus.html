@@ -2,14 +2,11 @@
 
 <div id='disqus_thread'></div>
 
- <div class="show-comments">
-    <button id="show-comments-button" onclick="disqus();return false;">Disqus Comment</button>
-</div>
-
 <script>
 var disqus_loaded = false;
-var disqus_shortname = 'yubermensch'
-function disqus() {
+var disqus_shortname = 'yubermensch';
+
+function loadDisqus() {
     if (!disqus_loaded)  {
         disqus_loaded = true;
         var e = document.createElement("script");
@@ -19,12 +16,12 @@ function disqus() {
         (document.getElementsByTagName("head")[0] ||
         document.getElementsByTagName("body")[0])
         .appendChild(e);
-        //Hide the button after opening
-        document.getElementById("show-comments-button").style.display = "none";
     }
 }
+
+// 페이지 로드 시 Disqus 로드
+window.onload = loadDisqus;
 </script>
-<noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript'>comments powered by
-    Disqus.</a></noscript>
+<noscript>Please enable JavaScript to view the <a href='https://disqus.com/?ref_noscript'>comments powered by Disqus.</a></noscript>
 
 {% endif %}
