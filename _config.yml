@@ -2,9 +2,8 @@
 title: Yubermensch #Your awesome title
 email: yuyuyu7020@outlook.com / yuyuyu7020@gmail.com #Your email
 description: > # this means to ignore newlines until "baseurl"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  스스로 오랫동안 고민하고 사유한 글만 올립니다.
+  철학, 자연과학, 사회문제 등에 대한 저의 생각을 공유하고 공부한 내용을 정리해서 올립니다
 
 baseurl: # the subpath of the site
 url: http://yubermensch.com # the base hostname & protocol for your site
@@ -41,7 +40,10 @@ defaults:
 
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 markdown: kramdown 
-
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+  
 # Filtering Content
 show_drafts: null
 limit_posts: 0
